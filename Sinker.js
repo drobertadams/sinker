@@ -29,7 +29,7 @@ Table of Contents
   Section III: Back Functions
     savePrefs()
     
-  Section IV: Flipping Functions
+  Section IV:  Flipping Functions
   
   Section V: i Button Functions
 */
@@ -64,7 +64,7 @@ function setup()
     if (copyUnsafeLinksFlag) copyUnsafeLinks.checked=copyUnsafeLinksFlag;
     if (updateFlag) update.checked=updateFlag;
     if (verboseFlag) verbose.checked=verboseFlag;
-    if (deleteFlag) deleteFlag.checked=deleteFlag;
+    if (deleteFlag) deleteInput.checked=deleteFlag;
     if (dryRunFlag) dryrun.checked=dryrunFlag;
     
 		if (excludeFromString) excludeFrom.value=excludeFromString;
@@ -129,7 +129,7 @@ function sync()
     if (compress.checked) cmd += "--compress ";
     if (copyUnsafeLinks.checked) cmd += "--copy-unsafe-links ";
     if (update.checked) cmd += "--update ";
-    if (deleteFlag.checked) cmd += "--delete ";
+    if (deleteInput.checked) cmd += "--delete ";
     if (dryrun.checked) cmd += "--dry-run ";    
     if (verbose.checked) cmd += "--verbose ";
     if (excludeFrom.value.length > 0)
@@ -165,7 +165,7 @@ function savePrefs()
     widget.setPreferenceForKey(compress.checked, "compress");
     widget.setPreferenceForKey(copyUnsafeLinks.checked, "copyUnsafeLinks");
     widget.setPreferenceForKey(update.checked, "update");
-    widget.setPreferenceForKey(deleteFlag.checked, "deleteFlag");
+    widget.setPreferenceForKey(deleteInput.checked, "deleteFlag");
     widget.setPreferenceForKey(dryrun.checked, "dryrun");
     widget.setPreferenceForKey(verbose.checked, "verbose");
     widget.setPreferenceForKey(excludeFrom.value, "excludeFrom");
