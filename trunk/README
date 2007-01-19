@@ -1,0 +1,16 @@
+Lessons Learned:
+
+ - Process: Design HTML, CSS, and non-widget JS.  Preview in Safari.  Add
+   widget-specific JS.
+ 
+ - Preview your widget in Safari, not Firefox.  Dashboard apparently uses the
+   Safari engine, so using Safari, WYSIWYG.
+   
+ - Everything in the style sheet must have an absolute position. No position,
+   then no rendering. This isn't true in Safari, but it is true in Dashboard.
+   
+ - Turn off all padding and margins in order to ensure that your absolute
+   positions are really absolute.
+   
+ - You can't use async. widget.system() with short-running processes because
+   your endHandler() will never get called.

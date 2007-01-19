@@ -1,0 +1,84 @@
+<!--
+Sinker (rsync interface) Widget - Simple interface to rsync.
+Copyright (c) 2005 D. Robert Adams
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+-->
+
+<html>
+
+<head>
+
+<!-- The style sheet should be kept in a separate file; it contains the design for the widget -->
+<style type="text/css">
+	@import "Sinker.css";
+</style>
+
+<!-- The JavaScript file contains the logic needed for this widget -->
+<script type='text/javascript' src='Sinker.js' charset='utf-8'/>
+
+</head>
+
+<body onload="setup();">
+
+  <!-- Front of the widget.  -->
+  <div id="front" onmousemove='mousemove(event);' onmouseout='mouseexit(event);'>
+    
+    <!-- Background, title, textarea, and button. -->
+    <img span="backgroundImage" src="Default.png">  		
+    <p class="title">Sinker</p>
+    <textarea id="output" class="outputbox"></textarea>
+    <input id="button" value="Sync" type="button" class="syncbutton" 
+      onclick="sync()">
+    
+    <!-- Here is the "i" button. -->
+		<div class='flip' id='flip' onclick='showBack();' 
+      onmouseover='enterflip(event);' onmouseout='exitflip(event)'></div>
+		<div class='flip' id='fliprollie'></div>
+  </div>
+  
+  <!-- Back of the widget. -->
+  <div id="back">
+  
+    <img span="backgroundImage" src="Back.png">  
+    
+    <!-- Left side preferences -->
+    <table class="prefTableLeft">
+      <tr> <td>--archive</td> <td><input id="archive" type="checkbox" /></td> </tr>
+      <tr> <td>--compress</td> <td><input id="compress" type="checkbox" /></td> </tr>
+      <tr> <td>--copy-unsafe-links</td> <td><input id="copyUnsafeLinks" type="checkbox" /></td> </tr> 
+      <tr> <td>--delete</td> <td><input id="deleteFlag" type="checkbox" /></td> </tr>
+      <tr> <td>--dry-run</td> <td><input id="dryrun" type="checkbox" /></td> </tr>
+      <tr> <td>--update</td> <td><input id="update" type="checkbox" /></td> </tr>
+      <tr> <td>--verbose</td> <td><input id="verbose" type="checkbox" /></td> </tr>
+    </table>
+    
+    <!-- Right side preferences -->
+    <table class="prefTableRight">
+      <tr> <td>--exclude-from</td> <td><input id="excludeFrom" class="small" type="text" /></td> </tr>
+      <tr> <td>--rsh</td> <td><input id="rsh" class="small" type="text" /></td> </tr>
+      <tr> <td>Source</td> <td><input id="source" class="small" type="text"/></td> </tr>
+      <tr> <td>Destination</td> <td><input id="destination" class="small" type="text"/></td> </tr>
+    </table>
+    
+    <p class="copyright">Sinker v1.0<br/>
+    Copyright (c) 2005 D. Robert Adams</p>
+    
+    <!-- Done button -->
+    <img class="donebutton" src="done.png" onclick='showFront();' />
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+/*
+Sinker (rsync interface) Widget - Simple interface to rsync.
+Copyright (c) 2005 D. Robert Adams
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+*/
+
+/* Default stuff */
+body {
+	margin: 0;
+  font: 10px "Lucida Grande";
+  color: white;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#front { 
+    display:block; 
+} 
+
+#back { 
+    display:none; 
+} 
+
+/****************************************************************************
+ * Front Page Style
+ ****************************************************************************/
+ 
+/* The background image starts in the upper-left corner. */
+.backgroundImage {
+	position: absolute; top: 0px; left: 0px;
+}
+
+/* Window title style. */
+.title {
+	font: 24px "Lucida Grande";
+	font-weight: bold;
+	color: white;
+	position: absolute; top: 10px; left: 10px;
+}
+
+/* The textarea that holds the output of rsync. */
+.outputbox {
+  font: 10px "Monaco"; /* this is 6.1 pixels wide */
+  color: black;
+  position: absolute; top: 54px; left: 10px;
+  width: 366px;
+  height: 100px;
+}
+
+/* The button that says "Sync". */
+.syncbutton {
+  position: absolute; top: 164px; left: 10px;
+}
+
+/* This is all the stuff for the "i" button. */
+.flip {
+	position:absolute;
+	bottom: 10px;
+	right: 20px;
+	width:13px;
+	height:13px;
+}
+
+#flip {
+	opacity:0; /* initially invisible until a mouseover in the widget */
+	background: url('file:///System/Library/WidgetResources/ibutton/white_i.png') no-repeat top left;
+	z-index:8000;
+}
+
+#fliprollie {
+	display:none;
+	opacity:0.25;
+	background: url('file:///System/Library/WidgetResources/ibutton/white_rollie.png') no-repeat top left;
+	z-index:7999;
+}
+
+/****************************************************************************
+ * Back Page Style
+ ****************************************************************************/
+ 
+.prefTableLeft {
+  position: absolute; top: 10px; left: 25px;
+  border-collapse: collapse;
+}
+
+.prefTableRight {
+  position: absolute; top: 10px; right: 10px;
+  border-collapse: collapse;
+}
+
+/* Cells in the preference tables. */
+td {
+   font: 10px "Lucida Grande";
+   color: white;
+   /* border-style: solid; border-width: thin; */
+   padding: 0;
+}
+
+/* This makes the text boxes the same size as the default font. */
+.small {
+   font: 10px "Lucida Grande";
+   color: black;
+}
+
+.copyright {
+  position: absolute; bottom: 10px; left: 25px;
+  color: white;
+}
+
+.doneButton {
+  position: absolute; bottom: 10px; right: 10px;
+}
+
