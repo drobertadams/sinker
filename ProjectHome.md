@@ -1,0 +1,1 @@
+Sinker is a Mac OS X dashboard widget that provides an interface to rsync.  It supports the most common rsync options and saves its configuration for later reuse.
